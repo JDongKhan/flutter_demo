@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app_1/scrollview/test_1.dart';
+import 'package:lifecycle/lifecycle.dart';
+
+import 'tabbarview/tabbar_view_demo_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      navigatorObservers: [
+        defaultLifecycleObserver,
+      ],
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -60,87 +67,30 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Stack(
+      body: Column(
         children: [
-          _buildMapWidget(),
-          _buildScrollWidget(),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => Test1(),
+                ),
+              );
+            },
+            child: Text('ScrollView问题'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => TabbarViewDemoPage(),
+                ),
+              );
+            },
+            child: Text('Lifecycle问题'),
+          ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-
-  ///map, but onPanUpdate can't print log
-  Widget _buildMapWidget() {
-    return GestureDetector(
-      onPanUpdate: (detail) {
-        print('detail:$detail');
-      },
-      child: Container(
-        height: double.infinity,
-        width: double.infinity,
-        alignment: Alignment(0, -0.3),
-        child: Text(
-          'Map',
-          style: TextStyle(color: Colors.blue),
-        ),
-        color: Colors.white,
-      ),
-    );
-  }
-
-  ///scroll widget
-  Widget _buildScrollWidget() {
-    return CustomScrollView(
-      slivers: [
-        _buildTopMenu(),
-
-        //transparent
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: 400,
-          ),
-        ),
-        _buildBottomMenu(0),
-        _buildBottomMenu(1),
-        _buildBottomMenu(2),
-        _buildBottomMenu(3),
-        _buildBottomMenu(4),
-        _buildBottomMenu(5),
-        _buildBottomMenu(6),
-      ],
-    );
-  }
-
-  ///top menu
-  Widget _buildTopMenu() {
-    return SliverToBoxAdapter(
-      child: Container(
-        height: 64,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.my_location),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.menu),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  ///bottom menu
-  Widget _buildBottomMenu(int index) {
-    return SliverToBoxAdapter(
-      child: Container(
-        height: 100,
-        color: Colors.orange,
-        child: Center(child: Text('Menu-$index')),
-      ),
     );
   }
 }
