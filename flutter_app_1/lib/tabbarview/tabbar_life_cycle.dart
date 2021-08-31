@@ -4,6 +4,7 @@ import 'package:lifecycle/lifecycle.dart';
 
 /// @author jd
 
+///针对tabbar切换子widget接收事件粗略实现
 class TabbarViewLifeCycle extends StatefulWidget {
   const TabbarViewLifeCycle({this.tabController, this.child});
   final TabController tabController;

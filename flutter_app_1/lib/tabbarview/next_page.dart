@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 /// @author jd
 
+///下一个页面，可以认为是信息的详情
 class NextPage extends StatefulWidget {
   const NextPage({this.text});
   final String text;
