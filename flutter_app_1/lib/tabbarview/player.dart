@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lifecycle/lifecycle.dart';
 
+import 'next_page.dart';
+
 /// @author jd
 class Player extends StatefulWidget {
   @override
@@ -10,7 +12,24 @@ class Player extends StatefulWidget {
 class _PlayerState extends State<Player> with LifecycleAware, LifecycleMixin {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return GestureDetector(
+      onTap: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => NextPage(
+              text: '播放器该暂停播放',
+            ),
+          ),
+        );
+      },
+      child: Container(
+        child: Center(
+            child: Text(
+          '我是一个播放器，点击我会跳转',
+          style: TextStyle(color: Colors.white),
+        )),
+      ),
+    );
   }
 
   @override

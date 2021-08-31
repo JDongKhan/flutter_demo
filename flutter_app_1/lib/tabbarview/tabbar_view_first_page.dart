@@ -11,7 +11,7 @@ class TabbarViewFirstPage extends StatefulWidget {
 }
 
 class _TabbarViewFirstPageState extends State<TabbarViewFirstPage>
-    with AutomaticKeepAliveClientMixin, LifecycleAware, LifecycleMixin {
+    with LifecycleAware, LifecycleMixin {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,7 +38,4 @@ class _TabbarViewFirstPageState extends State<TabbarViewFirstPage>
       debugPrint('first page pop ');
     }
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

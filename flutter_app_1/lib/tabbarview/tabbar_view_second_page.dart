@@ -19,7 +19,9 @@ class _TabbarViewSecondPageState extends State<TabbarViewSecondPage>
         onPressed: () {
           Navigator.of(context).push(
             MaterialPageRoute(
-              builder: (_) => NextPage(),
+              builder: (_) => NextPage(
+                text: 'first page和player不要该走onLifecycleEvent',
+              ),
             ),
           );
         },
