@@ -82,7 +82,8 @@ class _TabbarViewDemoPageState extends State<TabbarViewDemoPage>
             wantKeepAlive: true,
             child: e['page'] as Widget,
             onLifecycleEvent: (event) {
-              print('外部[$e]:$event');
+              ///打印外部事件，但是此处处理子页面不方便
+              print('外部事件-[$e]:$event');
             },
           );
         }).toList(),

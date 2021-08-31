@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lifecycle/lifecycle.dart';
 
+import 'player.dart';
+
 /// @author jd
 
 class TabbarViewFirstPage extends StatefulWidget {
@@ -14,6 +16,7 @@ class _TabbarViewFirstPageState extends State<TabbarViewFirstPage>
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
+      child: Player(),
     );
   }
 
@@ -22,19 +25,17 @@ class _TabbarViewFirstPageState extends State<TabbarViewFirstPage>
   @override
   void onLifecycleEvent(LifecycleEvent event) {
     if (event == LifecycleEvent.push) {
-      debugPrint('player push ');
+      debugPrint('first page push ');
     } else if (event == LifecycleEvent.visible) {
-      _visible = true;
-      debugPrint('player visible ');
+      debugPrint('first page visible ');
     } else if (event == LifecycleEvent.invisible) {
-      _visible = false;
-      debugPrint('player invisible ');
+      debugPrint('first page invisible ');
     } else if (event == LifecycleEvent.active) {
-      debugPrint('player active ');
+      debugPrint('first page active ');
     } else if (event == LifecycleEvent.inactive) {
-      debugPrint('player inactive ');
+      debugPrint('first page inactive ');
     } else if (event == LifecycleEvent.pop) {
-      debugPrint('player pop ');
+      debugPrint('first page pop ');
     }
   }
 
