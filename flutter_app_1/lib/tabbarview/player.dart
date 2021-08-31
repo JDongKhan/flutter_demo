@@ -4,6 +4,21 @@ import 'package:lifecycle/lifecycle.dart';
 import 'next_page.dart';
 
 /// @author jd
+
+///直播组件，专门处理业务
+class LiveWidget extends StatefulWidget {
+  @override
+  _LiveWidgetState createState() => _LiveWidgetState();
+}
+
+class _LiveWidgetState extends State<LiveWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Player();
+  }
+}
+
+///播放器组件 专门对接第三方播放器
 class Player extends StatefulWidget {
   @override
   _PlayerState createState() => _PlayerState();

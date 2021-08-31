@@ -5,6 +5,7 @@ import 'player.dart';
 
 /// @author jd
 
+///播放顶层widget，设计页面框架
 class TabbarViewFirstPage extends StatefulWidget {
   @override
   _TabbarViewFirstPageState createState() => _TabbarViewFirstPageState();
@@ -16,7 +17,7 @@ class _TabbarViewFirstPageState extends State<TabbarViewFirstPage>
   Widget build(BuildContext context) {
     return Container(
       color: Colors.red,
-      child: Player(),
+      child: LiveWidget(),
     );
   }
 
