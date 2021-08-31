@@ -83,7 +83,7 @@ class _TabbarViewDemoPageState extends State<TabbarViewDemoPage>
             child: e['page'] as Widget,
             onLifecycleEvent: (event) {
               ///打印外部事件，但是此处处理子页面不方便
-              // print('外部事件-[$e]:$event');
+              print('外部事件-[$e]:$event');
             },
           );
         }).toList(),
