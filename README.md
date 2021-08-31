@@ -21,8 +21,7 @@
 • Xcode 12.4, Build version 12D4e
 • CocoaPods version 1.10.0
 
-
-
+```
 Widget _buildMapWidget() {
     return GestureDetector(
       onPanUpdate: (detail) {
@@ -41,6 +40,7 @@ Widget _buildMapWidget() {
     );
   }
   
+```
   
 onPanUpdate can't print log
 
