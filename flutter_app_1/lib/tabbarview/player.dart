@@ -24,7 +24,7 @@ class Player extends StatefulWidget {
   _PlayerState createState() => _PlayerState();
 }
 
-class _PlayerState extends State<Player> with LifecycleAware, LifecycleMixin {
+class _PlayerState extends State<Player> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

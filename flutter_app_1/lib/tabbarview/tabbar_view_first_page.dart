@@ -11,8 +11,7 @@ class TabbarViewFirstPage extends StatefulWidget {
   _TabbarViewFirstPageState createState() => _TabbarViewFirstPageState();
 }
 
-class _TabbarViewFirstPageState extends State<TabbarViewFirstPage>
-    with LifecycleAware, LifecycleMixin {
+class _TabbarViewFirstPageState extends State<TabbarViewFirstPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
