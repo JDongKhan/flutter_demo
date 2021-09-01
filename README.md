@@ -1,3 +1,4 @@
+```shell
 # flutter_demo
 
 [✓] Flutter (Channel unknown, 2.0.6, on macOS 12.0 21A5248p darwin-x64, locale zh-Hans-CN)
@@ -22,6 +23,8 @@
 • CocoaPods version 1.10.0
 
 ```
+
+```dart
 Widget _buildMapWidget() {
     return GestureDetector(
       onPanUpdate: (detail) {
